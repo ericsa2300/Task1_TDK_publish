@@ -1,0 +1,349 @@
+﻿@{
+    ViewBag.Title = "Catalogue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
+    <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+        <!--begin::Info-->
+        <div class="d-flex align-items-center flex-wrap mr-2">
+            <!--begin::Page Title-->
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+                <span class="svg-icon svg-icon-primary svg-icon-2x CatalogDetail" hidden="hidden" onclick="CatalogDetail.Back()">
+                    <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Navigation/Angle-double-left.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon points="0 0 24 0 24 24 0 24" />
+                            <path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999) " />
+                            <path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999) " />
+                        </g>
+                    </svg><!--end::Svg Icon-->
+                </span>Cookies
+            </h5>
+            <!--end::Page Title-->
+        </div>
+        <!--end::Info-->
+        <!--begin::Toolbar-->
+        <div class="d-flex align-items-center">
+            <div class="input-group input-group-solid">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="flaticon2-search-1 icon-md"></i></span>
+                </div>
+                <input type="text" class="form-control form-control-solid" placeholder="Search . . ." id="txtSearch" onchange="CatalogDetail.GetDataCatalogue()">
+            </div>
+            <!--end::Search-->
+        </div>
+        <!--end::Toolbar-->
+    </div>
+</div>
+
+<div class="d-flex flex-column-fluid">
+    <!--begin::Container-->
+    <div class="container">
+
+       
+
+
+        <!--Start::Row-->
+        <div class="row CatalogHeader">
+            <div class="col-xl-2" onclick="Catalog.ShowDetail()">
+                <!--begin::Tiles Widget 12-->
+                <div class="card card-custom gutter-b" style="height: 150px; background-color:#fff" >
+                    <div class="card-body text-center">
+                        <span class="svg-icon svg-icon-3x svg-icon-success">
+                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Group.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                </g>
+                            </svg>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <div class="text-dark font-weight-bolder font-size-h2 mt-3">Catalogue</div>
+                    </div>
+                </div>
+                <!--end::Tiles Widget 12-->
+            </div>
+        </div>
+
+        <!--Start::Row-->
+        <div class="row CatalogDetail" hidden="hidden">
+            <div class="col-lg-12 col-xxl-12 order-1 order-xxl-2">
+                <!--begin::List Widget 4-->
+                <div class="card card-custom card-stretch gutter-b" style="background-color:#fff">
+                    <!--begin::Header-->
+                    <div class="card-header border-0">
+                        <div class="card-title">
+                            <div class="dropdown dropdown-inline">
+
+                                <a href="#" class="btn btn-light btn-sm font-size-sm font-weight-bolder dropdown-toggle text-dark-75" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                        <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Layout/Layout-top-panel-4.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24" />
+                                                <path d="M3,4 L20,4 C20.5522847,4 21,4.44771525 21,5 L21,7 C21,7.55228475 20.5522847,8 20,8 L3,8 C2.44771525,8 2,7.55228475 2,7 L2,5 C2,4.44771525 2.44771525,4 3,4 Z M3,10 L13,10 C13.5522847,10 14,10.4477153 14,11 L14,13 C14,13.5522847 13.5522847,14 13,14 L3,14 C2.44771525,14 2,13.5522847 2,13 L2,11 C2,10.4477153 2.44771525,10 3,10 Z M3,16 L13,16 C13.5522847,16 14,16.4477153 14,17 L14,19 C14,19.5522847 13.5522847,20 13,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,17 C2,16.4477153 2.44771525,16 3,16 Z" fill="#000000" />
+                                                <rect fill="#000000" opacity="0.3" x="16" y="10" width="5" height="10" rx="1" />
+                                            </g>
+                                        </svg><!--end::Svg Icon-->
+                                    </span></br>
+                                    Menu
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                                    <!--begin::Navigation-->
+                                    <ul class="navi navi-hover">
+
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link" onclick="CatalogDetail.Add('Add','','','')">
+                                                <span class="navi-icon">
+                                                    <i class="flaticon2-plus-1"></i>
+                                                </span>
+                                                <span class="navi-text">New Cookie</span>
+                                            </a>
+                                        </li>
+                                        <li class="navi-item">
+                                            <a href="#" class="navi-link" onclick="CatalogDetail.Edit()">
+                                                <span class="navi-icon">
+                                                    <i class="flaticon2-pen"></i>
+                                                </span>
+                                                <span class="navi-text">Edit Cookie</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                    <!--end::Navigation-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-toolbar">
+
+                        </div>
+                    </div>
+                    <!--end::Header-->
+                </div>
+                <!--end:List Widget 4-->
+            </div>
+        </div>
+
+        <div class="row CatalogDetail" id="DivCatalogDetail" hidden="hidden">
+            <div class="col-xl-4" id="DivPC0001">
+                
+                    <div class="card card-custom gutter-b card-stretch" style="background-color:#fff">
+                        <!--begin::Body-->
+                        <div class="card-body d-flex flex-column px-0" style="position: relative;">
+                            <!--begin::Items-->
+                            <a href="#" onclick="CatalogDetail.Add('Update', 'PC0001', 'Chocolate cookies2', 'Chocolate cover with butter')">
+                                <div class="flex-grow-1 card-spacer-x">
+                                    <!--begin::Item-->
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center mr-2">
+                                            <div>
+                                                <span class="font-size-h6 text-muted text-hover-primary ">Ref.</span>
+                                                <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">PC0001</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Item-->
+
+                                </div>
+                                <div class="flex-grow-1 card-spacer-x">
+                                    <!--begin::Item-->
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center mr-2">
+                                            <div>
+                                                <span class="font-size-h6 text-muted text-hover-primary ">Name</span>
+                                                <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cookies</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                                <div class="flex-grow-1 card-spacer-x">
+                                    <!--begin::Item-->
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="d-flex align-items-center mr-2">
+                                            <div>
+                                                <span class="font-size-h6 text-muted text-hover-primary ">Description</span>
+                                                <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cover with cheese</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Item-->
+                                </div>
+                                <!--end::Items-->
+                            </a>
+                            
+                            <span class="badge deleteIcon" hidden="hidden" onclick="CatalogDetail.Delete('DivPC0001','RefId')"><i class="fa fa-trash icon-xs text-white"></i></span>
+                            @*<span class="badge2 deleteIcon" hidden="hidden" onclick="CatalogDetail.Delete('DivPC0001')"><i class="fa fa-trash icon-xs text-white"></i></span>*@
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card card-custom gutter-b card-stretch" style="background-color:#fff">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex flex-column px-0" style="position: relative;">
+                        <!--begin::Items-->
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Ref.</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">PC0001</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Name</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cookies</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Description</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cover with cheese</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <!--end::Items-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+            </div>
+
+
+            <div class="col-xl-4">
+                <div class="card card-custom gutter-b card-stretch" style="background-color:#fff">
+                    <!--begin::Body-->
+                    <div class="card-body d-flex flex-column px-0" style="position: relative;">
+                        <!--begin::Items-->
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Ref.</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">PC0001</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Name</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cookies</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <div class="flex-grow-1 card-spacer-x">
+                            <!--begin::Item-->
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center mr-2">
+                                    <div>
+                                        <span class="font-size-h6 text-muted text-hover-primary ">Description</span>
+                                        <div class="font-size-sm text-dark font-weight-bold mt-1 font-weight-bolder" style="font-size:20px">Chocolate cover with cheese</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Item-->
+                        </div>
+                        <!--end::Items-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+            </div>
+
+
+
+        </div>
+        <!--End::Row-->
+
+        <div class="row deleteIcon" hidden="hidden">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-10"></div>
+                    <div class="col-lg-2">
+                        <button type="button" class="btn btn-success btn-lg btn-block" onclick="CatalogDetail.DoneDelete()">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="CatalogModal"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span id="titleModal"></span> <span id="RefId"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Cookie Name</label>
+                    <div class="col-8">
+                        <input class="form-control form-control-solid" type="text" id="txtCookieName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Cookie Description</label>
+                    <div class="col-8">
+                        <input class="form-control form-control-solid" type="text" id="txtCookieDescription" placeholder="chocolate covered cookie...">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="CatalogDetail.AddUpdate_Cookie()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .badge {
+        position: absolute;
+        top: -3px;
+        right: -5px;
+        padding: 5px 10px;
+        border-radius: 100%;
+        background: #dc3545;
+        color: white;
+    }
+
+    .badge2 {
+        position: absolute;
+        top: -3px;
+        right: -5px;
+        padding: 10px 10px;
+        border-radius: 100%;
+        background: #FFA800;
+        color: white;
+    }
+</style>
+<script src="~/assets/js/Home.js"></script>
